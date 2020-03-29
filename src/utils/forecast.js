@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if(body.error){
             callback(body.error, undefined);
         } else{
-            const weatherForecast = body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degree celsius out. There is ' + body.currently.precipProbability + ' % chance of rain.';
+            const weatherForecast = body.daily.data[0].summary + ' With a low of ' + body.daily.data[0].temperatureMin + ' and a high of ' + body.daily.data[0].temperatureMax + '. Currently it is ' + body.currently.temperature + ' degree celsius out. There is ' + body.currently.precipProbability + ' % chance of rain.';
             callback(undefined, weatherForecast);
         }
     });
